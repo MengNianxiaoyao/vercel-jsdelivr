@@ -3,12 +3,12 @@
     {
       "source": "/npm/:package@:version/:path*",
       "destination": "https://cdn.jsdelivr.net/npm/:package@:version/:path*",
-      "has": [{ "type": "host", "value": "your-domain.com" }]
+      "has": [{ "type": "host", "value": "cdn.anheyu.com" }]
     },
     {
       "source": "/gh/:user/:repo@:version/:path*",
       "destination": "https://cdn.jsdelivr.net/gh/:user/:repo@:version/:path*",
-      "has": [{ "type": "host", "value": "your-domain.com" }]
+      "has": [{ "type": "host", "value": "cdn.anheyu.com" }]
     }
   ],
   "edgeFunctions": {
