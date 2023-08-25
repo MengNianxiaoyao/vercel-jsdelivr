@@ -1,24 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/npm/hexo-theme-anzhiyu@:version/:file*",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/:file*"
+      "source": "/npm/hexo-theme-anzhiyu:path*",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu:path*"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu/:file*",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/:file*"
-    },
-    {
-      "source": "/npm/hexo-theme-anzhiyu@latest/:file*",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@latest/:file*"
-    },
-    {
-      "source": "/npm/hexo-theme-anzhiyu@:version",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version"
-    },
-    {
-      "source": "/npm/hexo-theme-anzhiyu/",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/"
+      "source": "/npm/hexo-theme-anzhiyu:path*/",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu:path*/"
     }
   ]
 }
