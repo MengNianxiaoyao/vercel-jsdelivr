@@ -1,36 +1,32 @@
 {
   "rewrites": [
     {
-      "source": "/npm/:package@:version/:path*",
-      "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=:version&path=/:path*"
+      "source": "/npm/hexo-theme-anzhiyu@:version/:file",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/:file"
     },
     {
-      "source": "/npm/:package/:path*",
-      "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=*&path=/:path*"
+      "source": "/npm/hexo-theme-anzhiyu@:version/dist/:file",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/dist/:file"
     },
     {
-      "source": "/npm/:package@:version",
-      "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=:version&path=/"
+      "source": "/npm/hexo-theme-anzhiyu@:version/:file",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/:file"
     },
     {
-      "source": "/npm/:package",
-      "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=*&path=/"
+      "source": "/npm/hexo-theme-anzhiyu@latest/:file",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@latest/:file"
     },
     {
-      "source": "/gh/:user/:repo@:version/:path*",
-      "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=:version&path=/:path*"
+      "source": "/npm/hexo-theme-anzhiyu@:version/src/:file",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/src/:file"
     },
     {
-      "source": "/gh/:package/:path*",
-      "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=*&path=/:path*"
+      "source": "/npm/hexo-theme-anzhiyu@:version",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version"
     },
     {
-      "source": "/gh/:package@:version",
-      "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=:version&path=/"
-    },
-    {
-      "source": "/gh/:package",
-      "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=*&path=/"
+      "source": "/npm/hexo-theme-anzhiyu/",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/"
     }
   ]
 }
