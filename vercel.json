@@ -1,6 +1,14 @@
 {
   "rewrites": [
     {
+      "source": "/npm/hexo-theme-anzhiyu/",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/"
+    },
+    {
+      "source": "/npm/hexo-theme-anzhiyu/@:version/",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/@:version/"
+    },
+    {
       "source": "/npm/hexo-theme-anzhiyu/:url*",
       "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/:url*"
     },
