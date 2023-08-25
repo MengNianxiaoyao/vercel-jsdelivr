@@ -2,15 +2,19 @@
   "rewrites": [
     {
       "source": "/npm/:package@:version/:path*",
-      "destination": "https://cdn.jsdelivr.net/npm/:package@:version/:path*"
+      "destination": "https://cdn.jsdelivr.net/npm/:package@:version/:path*",
+      "has": [{ "type": "host", "value": "your-domain.com" }]
     },
     {
       "source": "/gh/:user/:repo@:version/:path*",
-      "destination": "https://cdn.jsdelivr.net/gh/:user/:repo@:version/:path*"
+      "destination": "https://cdn.jsdelivr.net/gh/:user/:repo@:version/:path*",
+      "has": [{ "type": "host", "value": "your-domain.com" }]
     }
   ],
-  "middleware": [
-    { "src": "/npm/(.*)", "dest": "/whitelist.js" },
-    { "src": "/gh/(.*)", "dest": "/whitelist.js" }
-  ]
+  "edgeFunctions": {
+    "onRequest": [
+      { "src": "/npm/(.*)", "dest": "/whitelist.js" },
+      { "src": "/gh/(.*)", "dest": "/whitelist.js" }
+    ]
+  }
 }
