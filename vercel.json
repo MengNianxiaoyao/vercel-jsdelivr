@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/npm/hexo-theme-anzhiyu/:url*",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu:path/:url*"
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/:url*"
     },
     {
       "source": "/npm/hexo-theme-anzhiyu/:url*/",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu:path/:url*/"
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/:url*/"
     },
     {
       "source": "/npm/hexo-theme-anzhiyu@:version/:url*",
