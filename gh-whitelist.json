@@ -1,0 +1,9 @@
+{
+  "repos": [
+    {
+      "repo": "anzhiyu-c/hexo-theme-anzhiyu",
+      "version": "1.6.0",
+      "path": "/source/*"
+    }
+  ]
+}
