@@ -9,8 +9,12 @@
       "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu:path/*/"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu@:version/:url*",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/:url*"
+      "source": "/npm/hexo-theme-anzhiyu@:version/*",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/*"
+    },
+    {
+      "source": "/npm/hexo-theme-anzhiyu@:version/*/",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/*/"
     }
   ]
 }
