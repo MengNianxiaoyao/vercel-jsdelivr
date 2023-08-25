@@ -1,11 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/npm/hexo-theme-anzhiyu:path/*",
+      "source": "/npm/hexo-theme-anzhiyu/*",
       "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu:path/*"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu:path/*/",
+      "source": "/npm/hexo-theme-anzhiyu/*/",
       "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu:path/*/"
     },
     {
