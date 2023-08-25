@@ -5,20 +5,12 @@
       "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/:file"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu@:version/dist/:file",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/dist/:file"
-    },
-    {
-      "source": "/npm/hexo-theme-anzhiyu@:version/:file",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/:file"
+      "source": "/npm/hexo-theme-anzhiyu/:file",
+      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/:file"
     },
     {
       "source": "/npm/hexo-theme-anzhiyu@latest/:file",
       "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@latest/:file"
-    },
-    {
-      "source": "/npm/hexo-theme-anzhiyu@:version/src/:file",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/src/:file"
     },
     {
       "source": "/npm/hexo-theme-anzhiyu@:version",
