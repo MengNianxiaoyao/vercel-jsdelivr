@@ -1,3 +1,11 @@
+const npmWhitelist = require("../npm-whitelist.json");
+const ghWhitelist = require("../gh-whitelist.json");
+
+function pathMatch(path, pattern) {
+  const regex = new RegExp("^" + pattern.replace(/\*/g, ".*") + "$");
+  return regex.test(path);
+}
+
 module.exports = async (req, res) => {
   const { type, packageOrRepo, version, path } = req.query;
 
