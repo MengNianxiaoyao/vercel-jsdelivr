@@ -1,12 +1,3 @@
-/*
- * @Description:
- * @Author: 安知鱼
- * @Email: anzhiyu-c@qq.com
- * @Date: 2023-08-25 22:53:32
- * @LastEditTime: 2023-08-25 23:43:30
- * @LastEditors: 安知鱼
- */
-const fetch = require("node-fetch");
 const npmWhitelist = require("../npm-whitelist.json");
 const ghWhitelist = require("../gh-whitelist.json");
 
@@ -45,7 +36,8 @@ module.exports = async (req, res) => {
   }
 
   if (destination) {
-    const response = await fetch(destination);
+    const fetch = await import("node-fetch");
+    const response = await fetch.default(destination);
     const contentType = response.headers.get("content-type");
     const content = contentType.startsWith("text/") ? await response.text() : await response.arrayBuffer();
     res.setHeader("Content-Type", contentType);
