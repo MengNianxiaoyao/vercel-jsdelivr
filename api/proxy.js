@@ -1,25 +1,20 @@
-/*
- * @Description: 代理js
- * @Author: 安知鱼
- * @Email: anzhiyu-c@qq.com
- * @Date: 2023-08-25 22:53:32
- * @LastEditTime: 2023-08-25 23:10:03
- * @LastEditors: 安知鱼
- */
-const npmWhitelist = require("./npm-whitelist.json");
-const ghWhitelist = require("./gh-whitelist.json");
+const fetch = require("node-fetch");
+const npmWhitelist = require("../npm-whitelist.json");
+const ghWhitelist = require("../gh-whitelist.json");
 
 function pathMatch(path, pattern) {
   const regex = new RegExp("^" + pattern.split("*").join(".*") + "$");
   return regex.test(path);
 }
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   const pathSegments = req.url.split("/");
   const type = pathSegments[1];
   const packageOrRepo = pathSegments[2];
   const version = pathSegments[3];
   const path = "/" + pathSegments.slice(4).join("/");
+
+  let destination = "";
 
   if (type === "npm") {
     const allowedPackage = npmWhitelist.packages.find(
@@ -27,7 +22,7 @@ module.exports = (req, res) => {
     );
 
     if (allowedPackage && pathMatch(path, allowedPackage.path)) {
-      return res.status(200).send("Proxying npm package");
+      destination = `https://cdn.jsdelivr.net/npm/${packageOrRepo}@${version}${path}`;
     }
   }
 
@@ -37,9 +32,17 @@ module.exports = (req, res) => {
     );
 
     if (allowedRepo && pathMatch(path, allowedRepo.path)) {
-      return res.status(200).send("Proxying GitHub repo");
+      destination = `https://cdn.jsdelivr.net/gh/${packageOrRepo}@${version}${path}`;
     }
   }
 
-  return res.status(403).send("Package or repository not allowed");
+  if (destination) {
+    const response = await fetch(destination);
+    const contentType = response.headers.get("content-type");
+    const content = contentType.startsWith("text/") ? await response.text() : await response.arrayBuffer();
+    res.setHeader("Content-Type", contentType);
+    res.status(response.status).send(content);
+  } else {
+    res.status(403).send("Package or repository not allowed");
+  }
 };
