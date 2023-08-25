@@ -1,17 +1,5 @@
-const npmWhitelist = require("../npm-whitelist.json");
-const ghWhitelist = require("../gh-whitelist.json");
-
-function pathMatch(path, pattern) {
-  const regex = new RegExp("^" + pattern.replace(/\*/g, ".*") + "$");
-  return regex.test(path);
-}
-
 module.exports = async (req, res) => {
-  const pathSegments = req.url.split("/");
-  const type = pathSegments[1];
-  const packageOrRepo = pathSegments[2];
-  const version = pathSegments[3];
-  const path = "/" + pathSegments.slice(4).join("/");
+  const { type, packageOrRepo, version, path } = req.query;
 
   let destination = "";
 

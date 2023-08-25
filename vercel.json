@@ -1,6 +1,12 @@
 {
   "rewrites": [
-    { "source": "/npm/:package@:version/:path*", "destination": "/api/proxy" },
-    { "source": "/gh/:user/:repo@:version/:path*", "destination": "/api/proxy" }
+    {
+      "source": "/npm/:package@:version/:path*",
+      "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=:version&path=/:path*"
+    },
+    {
+      "source": "/gh/:user/:repo@:version/:path*",
+      "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=:version&path=/:path*"
+    }
   ]
 }
