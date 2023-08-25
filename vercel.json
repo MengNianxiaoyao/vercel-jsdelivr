@@ -5,8 +5,32 @@
       "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=:version&path=/:path*"
     },
     {
+      "source": "/npm/:package/:path*",
+      "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=*&path=/:path*"
+    },
+    {
+      "source": "/npm/:package@:version",
+      "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=:version&path=/"
+    },
+    {
+      "source": "/npm/:package",
+      "destination": "/api/proxy?type=npm&packageOrRepo=:package&version=*&path=/"
+    },
+    {
       "source": "/gh/:user/:repo@:version/:path*",
       "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=:version&path=/:path*"
+    },
+    {
+      "source": "/gh/:package/:path*",
+      "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=*&path=/:path*"
+    },
+    {
+      "source": "/gh/:package@:version",
+      "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=:version&path=/"
+    },
+    {
+      "source": "/gh/:package",
+      "destination": "/api/proxy?type=gh&packageOrRepo=:user/:repo&version=*&path=/"
     }
   ]
 }

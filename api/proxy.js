@@ -17,7 +17,9 @@ module.exports = async (req, res) => {
     );
 
     if (allowedPackage && pathMatch(path, allowedPackage.path)) {
-      destination = `https://cdn.jsdelivr.net/npm/${packageOrRepo}@${version}${path}`;
+      const finalVersion = version === "*" ? "" : `@${version}`;
+      const finalPath = path === "/" ? "" : path;
+      destination = `https://cdn.jsdelivr.net/npm/${packageOrRepo}${finalVersion}${finalPath}`;
     }
   }
 
@@ -27,7 +29,9 @@ module.exports = async (req, res) => {
     );
 
     if (allowedRepo && pathMatch(path, allowedRepo.path)) {
-      destination = `https://cdn.jsdelivr.net/gh/${packageOrRepo}@${version}${path}`;
+      const finalVersion = version === "*" ? "" : `@${version}`;
+      const finalPath = path === "/" ? "" : path;
+      destination = `https://cdn.jsdelivr.net/gh/${packageOrRepo}${finalVersion}${finalPath}`;
     }
   }
 
