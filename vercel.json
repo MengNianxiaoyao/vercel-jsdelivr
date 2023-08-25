@@ -9,14 +9,8 @@
       "destination": "https://cdn.jsdelivr.net/gh/:user/:repo@:version/:path*"
     }
   ],
-  "routes": [
-    {
-      "src": "/npm/(.*)",
-      "dest": "/proxy.js"
-    },
-    {
-      "src": "/gh/(.*)",
-      "dest": "/proxy.js"
-    }
+  "middleware": [
+    { "src": "/npm/(.*)", "dest": "/whitelist.js" },
+    { "src": "/gh/(.*)", "dest": "/whitelist.js" }
   ]
 }
