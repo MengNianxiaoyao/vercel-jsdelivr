@@ -3,7 +3,7 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2023-08-25 22:53:32
- * @LastEditTime: 2023-08-25 22:53:37
+ * @LastEditTime: 2023-08-25 23:10:03
  * @LastEditors: 安知鱼
  */
 const npmWhitelist = require("./npm-whitelist.json");
@@ -21,7 +21,7 @@ module.exports = (req, res) => {
   const version = pathSegments[3];
   const path = "/" + pathSegments.slice(4).join("/");
 
-  if (type === "npm-proxy") {
+  if (type === "npm") {
     const allowedPackage = npmWhitelist.packages.find(
       pkg => pkg.name === packageOrRepo && (pkg.version === "*" || pkg.version === version)
     );
@@ -31,7 +31,7 @@ module.exports = (req, res) => {
     }
   }
 
-  if (type === "gh-proxy") {
+  if (type === "gh") {
     const allowedRepo = ghWhitelist.repos.find(
       repo => repo.repo === packageOrRepo && (repo.version === "*" || repo.version === version)
     );

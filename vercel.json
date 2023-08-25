@@ -1,21 +1,21 @@
 {
   "rewrites": [
     {
-      "source": "/npm-proxy/:package@:version/:path*",
+      "source": "/npm/:package@:version/:path*",
       "destination": "https://cdn.jsdelivr.net/npm/:package@:version/:path*"
     },
     {
-      "source": "/gh-proxy/:user/:repo@:version/:path*",
+      "source": "/gh/:user/:repo@:version/:path*",
       "destination": "https://cdn.jsdelivr.net/gh/:user/:repo@:version/:path*"
     }
   ],
   "routes": [
     {
-      "src": "/npm-proxy/(.*)",
+      "src": "/npm/(.*)",
       "dest": "/proxy.js"
     },
     {
-      "src": "/gh-proxy/(.*)",
+      "src": "/gh/(.*)",
       "dest": "/proxy.js"
     }
   ]
