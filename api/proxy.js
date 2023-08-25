@@ -1,9 +1,17 @@
+/*
+ * @Description:
+ * @Author: 安知鱼
+ * @Email: anzhiyu-c@qq.com
+ * @Date: 2023-08-25 22:53:32
+ * @LastEditTime: 2023-08-25 23:43:30
+ * @LastEditors: 安知鱼
+ */
 const fetch = require("node-fetch");
 const npmWhitelist = require("../npm-whitelist.json");
 const ghWhitelist = require("../gh-whitelist.json");
 
 function pathMatch(path, pattern) {
-  const regex = new RegExp("^" + pattern.split("*").join(".*") + "$");
+  const regex = new RegExp("^" + pattern.replace(/\*/g, ".*") + "$");
   return regex.test(path);
 }
 
