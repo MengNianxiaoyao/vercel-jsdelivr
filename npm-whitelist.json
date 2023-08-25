@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "name": "hexo-anzhiyu-theme",
+      "name": "hexo-theme-anzhiyu",
       "version": "*",
       "path": "/**"
     }
