@@ -1,28 +1,33 @@
 {
+  "functions": {
+    "api/proxy.js": {
+      "runtime": "nodejs14.x"
+    }
+  },
   "rewrites": [
     {
-      "source": "/npm/hexo-theme-anzhiyu/",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/"
+      "source": "/npm/:packageName/",
+      "destination": "/api/proxy?packageName=:packageName"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu@:version/",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/"
+      "source": "/npm/:packageName@:version/",
+      "destination": "/api/proxy?packageName=:packageName&version=:version"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu/:url*",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/:url*"
+      "source": "/npm/:packageName/:path*",
+      "destination": "/api/proxy?packageName=:packageName&path=:path*"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu/:url*/",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu/:url*/"
+      "source": "/npm/:packageName/:path*/",
+      "destination": "/api/proxy?packageName=:packageName&path=:path*/"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu@:version/:url*",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/:url*"
+      "source": "/npm/:packageName@:version/:path*",
+      "destination": "/api/proxy?packageName=:packageName&version=:version&path=:path*"
     },
     {
-      "source": "/npm/hexo-theme-anzhiyu@:version/:url*/",
-      "destination": "https://cdn.jsdelivr.net/npm/hexo-theme-anzhiyu@:version/:url*/"
+      "source": "/npm/:packageName@:version/:path*/",
+      "destination": "/api/proxy?packageName=:packageName&version=:version&path=:path*/"
     }
   ]
 }
