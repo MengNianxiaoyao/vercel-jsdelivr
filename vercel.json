@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/npm/:packageName@:version/:path*/",
-      "destination": "/api/proxy?packageName=:packageName&version=:version&path=:path*"
+      "destination": "/api/proxy?packageName=:packageName&version=:version&path=:path*&needEnd=true"
     },
     {
       "source": "/npm/:packageName@:version/:path*",
