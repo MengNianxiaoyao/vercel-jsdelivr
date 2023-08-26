@@ -14,7 +14,7 @@
     },
     {
       "source": "/npm/:packageName/:path*/",
-      "destination": "/api/proxy?packageName=:packageName&path=:path*"
+      "destination": "/api/proxy?packageName=:packageName&path=:path*&needEnd=true"
     },
     {
       "source": "/npm/:packageName/:path*",
