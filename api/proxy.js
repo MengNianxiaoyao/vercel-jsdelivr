@@ -2,7 +2,7 @@
 const allowedPackages = require("../allowed-packages.json");
 
 module.exports = async (req, res) => {
-  const { packageName, version, path } = req.query;
+  const { packageName, version, path, needEnd } = req.query;
 
   const packageConfig = allowedPackages.find(pkg => pkg.name === packageName);
   console.log(packageName, version, path);
@@ -26,7 +26,8 @@ module.exports = async (req, res) => {
 
   const versionSegment = version ? `@${version}` : "";
   const pathSegment = path ? `/${path}` : "/";
-  const url = `https://cdn.jsdelivr.net/npm/${packageName}${versionSegment}${pathSegment}`;
+  const needEndSegment = needEnd ? "/" : "";
+  const url = `https://cdn.jsdelivr.net/npm/${packageName}${versionSegment}${pathSegment}${needEndSegment}`;
   console.log("url:", url);
   const fetchModule = await import("node-fetch");
   const fetch = fetchModule.default;
