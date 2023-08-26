@@ -5,6 +5,7 @@ module.exports = async (req, res) => {
   const { packageName, version, path } = req.query;
 
   const packageConfig = allowedPackages.find(pkg => pkg.name === packageName);
+  console.log(packageName, version, path);
 
   if (!packageConfig) {
     res.status(403).send({ allowed: false, message: "Package not allowed" });
