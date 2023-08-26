@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/npm/:packageName/",
-      "destination": "/api/proxy?packageName=:packageName"
+      "source": "/npm/:packageName@:version/:path*/",
+      "destination": "/api/proxy?packageName=:packageName&version=:version&path=:path*/"
+    },
+    {
+      "source": "/npm/:packageName@:version/:path*",
+      "destination": "/api/proxy?packageName=:packageName&version=:version&path=:path*"
     },
     {
       "source": "/npm/:packageName@:version/",
@@ -17,12 +21,8 @@
       "destination": "/api/proxy?packageName=:packageName&path=:path*/"
     },
     {
-      "source": "/npm/:packageName@:version/:path*",
-      "destination": "/api/proxy?packageName=:packageName&version=:version&path=:path*"
-    },
-    {
-      "source": "/npm/:packageName@:version/:path*/",
-      "destination": "/api/proxy?packageName=:packageName&version=:version&path=:path*/"
+      "source": "/npm/:packageName/",
+      "destination": "/api/proxy?packageName=:packageName"
     }
   ]
 }
