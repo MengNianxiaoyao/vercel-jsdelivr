@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
   const versionSegment = version ? `@${version}` : "";
   const pathSegment = path ? `/${path}` : "";
   const url = `https://cdn.jsdelivr.net/npm/${packageName}${versionSegment}${pathSegment}`;
-
+  console.log("url:", url);
   const fetchModule = await import("node-fetch");
   const fetch = fetchModule.default;
   const response = await fetch(url);
