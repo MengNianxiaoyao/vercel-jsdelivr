@@ -38,5 +38,5 @@ module.exports = async (req, res) => {
   }
 
   res.setHeader("Content-Type", response.headers.get("Content-Type"));
-  res.status(response.status).send(await response.arrayBuffer());
+  res.status(response.status).send(await response.buffer());
 };
