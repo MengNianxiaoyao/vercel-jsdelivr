@@ -1,4 +1,14 @@
 {
+  "routes": [
+    {
+      "src": "/npm/(.*)",
+      "dest": "/api/proxy.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
   "rewrites": [
     {
       "source": "/npm/:packageName@:version/:path*/",
