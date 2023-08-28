@@ -1,3 +1,11 @@
+/*
+ * @Description:
+ * @Author: 安知鱼
+ * @Email: anzhiyu-c@qq.com
+ * @Date: 2023-08-26 09:52:01
+ * @LastEditTime: 2023-08-28 10:25:21
+ * @LastEditors: 安知鱼
+ */
 // api/proxy.js
 const allowedPackages = require("../allowed-packages.json");
 
@@ -16,6 +24,7 @@ module.exports = async (req, res) => {
     if (allowedPath === "*") {
       return true;
     }
+    console.log(allowedPath, path.startsWith(allowedPath));
     return path.startsWith(allowedPath);
   });
 
