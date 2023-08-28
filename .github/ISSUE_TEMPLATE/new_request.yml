@@ -1,0 +1,61 @@
+name: New Request NPM
+description: A new request broker npm package
+title: "[New Request NPM]: "
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        重要：请依照该模板来提交 
+        Please follow the template to create a new issue
+  - type: checkboxes
+    id: anzhiyu-chinese
+    attributes:
+      label: 我的NPM包内容符合中国大陆法律
+      description: 我的NPM包内容符合中国大陆法律
+    validations:
+      required: true
+  - type: checkboxes
+    id: anzhiyu-chinese
+    attributes:
+      label: 我的项目是开源的
+      description: 我的项目是开源的
+    validations:
+      required: true
+  - type: checkboxes
+    id: anzhiyu-chinese
+    attributes:
+      label: 仅仅只能代理代码部分（图片等资源不接受代理）
+    validations:
+      required: true
+  - type: input
+    id: anzhiyu-open-source-address
+    attributes:
+      label: 我的项目开源地址
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 需要代理的目录与文件
+      description: 请按照模板提交需要代理的目录与文件
+      placeholder: 请按照模板提交需要代理的目录与文件
+      value: |
+        ```json
+        {
+          "name": "hexo-theme-anzhiyu",
+          "allowedPaths": ["source/js"]
+        }
+        ```
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: 出现问题的网站 | Website
+      description: 请提供下可复现的网站地址 | Please supply a website url which can reproduce problem.
+      placeholder:
+    validations:
+      required: true
