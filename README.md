@@ -12,7 +12,7 @@
 ```json
 {
   "name": "hexo-theme-anzhiyu",
-  "allowedPaths": ["source/js/*"]
+  "allowedPaths": ["source/js"]
 }
 ```
 
