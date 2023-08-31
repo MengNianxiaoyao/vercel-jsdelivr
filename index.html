@@ -18,6 +18,11 @@
     <meta name="theme-color" content="#ffffff" />
     <meta name="description" content="海外禁止访问，请使用中国大陆网络访问。" />
     <meta name="theme-color" content="#f6f7f8" />
+    <style>
+      p {
+        margin: 5px;
+      }
+    </style>
   </head>
   <body style="background: #f6f7f8; margin: 0; padding: 0">
     <div
@@ -47,18 +52,33 @@
       >
         <div
           class="title"
-          style="
-            width: 256px;
-            height: 256px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-          "
+          style="width: 556px; display: flex; align-items: center; justify-content: center; flex-direction: column"
         >
           <h1 alt="禁止海外访问" style="margin: 0">安知鱼公益CDN</h1>
-          <h2 class="title-tip" style="font-size: 50px; margin: 0">🌧️</h2>
+
+          <!-- 例如： ```json { "name": "hexo-theme-anzhiyu", "allowedPaths": ["source/js"] } ``` 即可使用
+          https://cdn.anheyu.com/npm/hexo-theme-anzhiyu/source/js/ 访问其目录下的所有资源 -->
         </div>
+        <div>
+          <p>
+            这是一个镜像了
+            <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreferrer">https://www.jsdelivr.com/</a>
+          </p>
+          <p>npm模块的CDN项目</p>
+          <p>
+            <a href="https://github.com/anzhiyu-c/vercel-jsdelivr" target="_blank" rel="noopener noreferrer">本项目</a>
+            采用白名单模式，如果您的公开库需要使用请向本仓库提交issuse
+          </p>
+
+          <p>1. 您的项目是开源的</p>
+          <p>2.您的项目内资源遵循中国大陆法律</p>
+          <p>3.仅仅只能代理代码部分（图片等资源不接受代理），请您提交的时候提交您需要代理的目录与文件</p>
+          <p>https://cdn.anheyu.com/npm/package@version/file</p>
+          <p>https://cdn.anheyu.com/npm/jquery@3.6.4/dist/jquery.min.js</p>
+          <p>https://cdn.anheyu.com/npm/jquery@3.6/dist/jquery.min.js</p>
+          <p>https://cdn.anheyu.com/npm/jquery@3/dist/jquery.min.js</p>
+        </div>
+
         <div
           class="prohibition-card"
           style="
