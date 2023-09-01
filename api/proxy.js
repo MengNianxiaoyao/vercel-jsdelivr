@@ -3,17 +3,20 @@
  * @Author: 安知鱼
  * @Email: anzhiyu-c@qq.com
  * @Date: 2023-08-26 09:52:01
- * @LastEditTime: 2023-08-28 10:25:21
+ * @LastEditTime: 2023-09-01 14:20:51
  * @LastEditors: 安知鱼
  */
 // api/proxy.js
 const allowedPackages = require("../allowed-packages.json");
 
 module.exports = async (req, res) => {
-  const { packageName, version, path, needEnd } = req.query;
+  const { scope, packageName, version, path, needEnd } = req.query;
 
-  const packageConfig = allowedPackages.find(pkg => pkg.name === packageName);
-  console.log(packageName, version, path, needEnd);
+  // 组合范围和包名
+  const fullPackageName = scope ? `${scope}/${packageName}` : packageName;
+
+  const packageConfig = allowedPackages.find(pkg => pkg.name === fullPackageName);
+  console.log(fullPackageName, version, path, needEnd);
 
   if (!packageConfig) {
     res.status(403).send({ allowed: false, message: "Package not allowed" });
@@ -37,7 +40,7 @@ module.exports = async (req, res) => {
   const pathSegment = path ? `/${path}` : "/";
   const needEndSegment = pathSegment.endsWith("/") ? "" : needEnd ? "/" : "";
 
-  const url = `https://cdn.jsdelivr.net/npm/${packageName}${versionSegment}${pathSegment}${needEndSegment}`;
+  const url = `https://cdn.jsdelivr.net/npm/${fullPackageName}${versionSegment}${pathSegment}${needEndSegment}`;
   console.log("url:", url);
   const fetchModule = await import("node-fetch");
   const fetch = fetchModule.default;
