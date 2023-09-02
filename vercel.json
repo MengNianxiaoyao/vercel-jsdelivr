@@ -25,6 +25,10 @@
       "destination": "/api/proxy?scope=:scope&packageName=:packageName"
     },
     {
+      "source": "/sm/:path*",
+      "destination": "https://cdn.jsdelivr.net/sm/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
