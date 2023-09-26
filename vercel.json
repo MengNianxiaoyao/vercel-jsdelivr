@@ -29,7 +29,7 @@
       "destination": "https://cdn.jsdelivr.net/sm/:path*"
     },
     {
-      "source": "/gh/:path*",
+      "source": "/gh/MengNianxiaoyao/:path*",
       "destination": "https://cdn.jsdelivr.net/gh/:path*"
     },
     {
