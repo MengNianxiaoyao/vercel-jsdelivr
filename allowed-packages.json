@@ -1,2 +1,6 @@
 [
+  {
+    "name": "twikoo",
+    "allowedPaths": ["dist"]
+  },
 ]
