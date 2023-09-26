@@ -1,11 +1,3 @@
-/*
- * @Description:
- * @Author: 安知鱼
- * @Email: anzhiyu-c@qq.com
- * @Date: 2023-08-26 09:52:01
- * @LastEditTime: 2023-09-01 14:20:51
- * @LastEditors: 安知鱼
- */
 // api/proxy.js
 const allowedPackages = require("../allowed-packages.json");
 
