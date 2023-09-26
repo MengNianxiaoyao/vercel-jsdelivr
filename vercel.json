@@ -29,6 +29,10 @@
       "destination": "https://cdn.jsdelivr.net/sm/:path*"
     },
     {
+      "source": "/gh/:path*",
+      "destination": "https://cdn.jsdelivr.net/gh/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
