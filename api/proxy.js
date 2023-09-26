@@ -31,8 +31,12 @@ module.exports = async (req, res) => {
   const versionSegment = version ? `@${version}` : "";
   const pathSegment = path ? `/${path}` : "/";
   const needEndSegment = pathSegment.endsWith("/") ? "" : needEnd ? "/" : "";
+  const cdn = ['cdn.jsdelivr.net/npm', 'unpkg.com'];
+  const num = Math.floor(Math.random() * 2) + 1;
+  const cdnurl = cdn[num];
 
-  const url = `https://cdn.jsdelivr.net/npm/${fullPackageName}${versionSegment}${pathSegment}${needEndSegment}`;
+
+  const url = `https://${cdnurl}/${fullPackageName}${versionSegment}${pathSegment}${needEndSegment}`;
   console.log("url:", url);
   const fetchModule = await import("node-fetch");
   const fetch = fetchModule.default;
