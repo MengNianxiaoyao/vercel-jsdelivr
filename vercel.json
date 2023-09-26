@@ -1,27 +1,27 @@
 {
   "rewrites": [
     {
-      "source": "/npm/:scope(@[^/]+)?/:packageName@:version/:path*/",
+      "source": "/:scope(@[^/]+)?/:packageName@:version/:path*/",
       "destination": "/api/proxy?scope=:scope&packageName=:packageName&version=:version&path=:path*&needEnd=true"
     },
     {
-      "source": "/npm/:scope(@[^/]+)?/:packageName@:version/:path*",
+      "source": "/:scope(@[^/]+)?/:packageName@:version/:path*",
       "destination": "/api/proxy?scope=:scope&packageName=:packageName&version=:version&path=:path*"
     },
     {
-      "source": "/npm/:scope(@[^/]+)?/:packageName@:version/",
+      "source": "/:scope(@[^/]+)?/:packageName@:version/",
       "destination": "/api/proxy?scope=:scope&packageName=:packageName&version=:version"
     },
     {
-      "source": "/npm/:scope(@[^/]+)?/:packageName/:path*/",
+      "source": "/:scope(@[^/]+)?/:packageName/:path*/",
       "destination": "/api/proxy?scope=:scope&packageName=:packageName&path=:path*&needEnd=true"
     },
     {
-      "source": "/npm/:scope(@[^/]+)?/:packageName/:path*",
+      "source": "/:scope(@[^/]+)?/:packageName/:path*",
       "destination": "/api/proxy?scope=:scope&packageName=:packageName&path=:path*"
     },
     {
-      "source": "/npm/:scope(@[^/]+)?/:packageName/",
+      "source": "/:scope(@[^/]+)?/:packageName/",
       "destination": "/api/proxy?scope=:scope&packageName=:packageName"
     },
     {
