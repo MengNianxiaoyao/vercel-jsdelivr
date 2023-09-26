@@ -26,7 +26,7 @@
     },
     {
       "source": "/gh/MengNianxiaoyao/:path*",
-      "destination": "https://cdn.jsdelivr.net/gh/:path*"
+      "destination": "https://cdn.jsdelivr.net/gh/MengNianxiaoyao/:path*"
     },
     {
       "source": "/(.*)",
