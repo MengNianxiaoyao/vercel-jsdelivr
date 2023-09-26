@@ -32,7 +32,7 @@ module.exports = async (req, res) => {
   const pathSegment = path ? `/${path}` : "/";
   const needEndSegment = pathSegment.endsWith("/") ? "" : needEnd ? "/" : "";
   const cdn = ['cdn.jsdelivr.net/npm', 'unpkg.com'];
-  const num = Math.floor(Math.random() * 2) + 1;
+  const num = Math.floor(Math.random() * 1) + 0;
   const cdnurl = cdn[num];
 
   const url = `https://${cdnurl}/${fullPackageName}${versionSegment}${pathSegment}${needEndSegment}`;
