@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
   const num = Math.floor(Math.random() * 2);
   const cdnurl = cdn[num];
 
-  const url = `https://&{cdnurl}/${fullPackageName}${versionSegment}${pathSegment}${needEndSegment}`;
+  const url = `https://${cdnurl}/${fullPackageName}${versionSegment}${pathSegment}${needEndSegment}`;
   console.log("url:", url);
   const fetchModule = await import("node-fetch");
   const fetch = fetchModule.default;
